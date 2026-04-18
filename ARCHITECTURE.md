@@ -6,7 +6,7 @@ El proyecto sigue una arquitectura modular enfocada en la separación de respons
 
 ```text
 src/
-├── assets/            # Imágenes, iconos, fuentes y demás recursos estáticos
+├── assets/            # Imágene, iconos, fuentes y demás recursos estáticos
 ├── components/        # Componentes de presentación (UI reutilizable, estado estricto de UI)
 │   ├── common/        # Botones, inputs, modales genéricos, loaders
 │   ├── filters/       # Selectores de género, año y barras de búsqueda
