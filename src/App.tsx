@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MovieProvider } from './context/movie/MovieContext';
 import { useMovies, type Movie } from './hooks/useMovies';
 import { SwipeCard } from './components/swipe/SwipeCard';
@@ -12,6 +12,11 @@ const DiscoverView = () => {
   if (error) return <div className="text-red-500 bg-red-900/30 p-4 rounded-lg">{error}</div>;
 
   const currentMovie = movies[currentIndex];
+  
+  // Guardia de seguridad para evitar errores de nulidad
+  if (!loading && movies.length > 0 && !currentMovie) {
+    return <div className="text-white">Has llegado al final.</div>;
+  }
 
   const handleSwipe = (direction: 'like' | 'dislike') => {
     console.log(`Evaluada como ${direction}:`, currentMovie.title);

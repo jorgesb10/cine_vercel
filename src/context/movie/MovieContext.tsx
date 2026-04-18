@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useEffect, useMemo, useContext, ReactNode, Dispatch } from 'react';
+import { createContext, useReducer, useEffect, useMemo, useContext, ReactNode, Dispatch } from 'react';
 import type { Movie } from '../../hooks/useMovies';
 
 // --- TIPOS ---

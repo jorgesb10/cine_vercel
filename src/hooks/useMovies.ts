@@ -49,7 +49,7 @@ export const useMovies = (options: UseMoviesOptions = {}): UseMoviesResult => {
   const [error, setError] = useState<string | null>(null);
 
   // Hook secundario: paginación
-  const { page, hasMore, loadMore: advancePage, setHasMore, resetPagination } = useMoviePagination(options);
+  const { page, hasMore, loadMore: advancePage, setHasMore } = useMoviePagination(options);
 
   // Hook secundario: cache genérico tipado con nuestro payload
   const cache = useTMDBCache<MoviePageCachePayload>();
