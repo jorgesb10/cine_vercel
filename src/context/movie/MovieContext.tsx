@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect, useMemo, useContext, ReactNode, Dispatch } from 'react';
-import { Movie } from '../../hooks/useMovies';
+import type { Movie } from '../../hooks/useMovies';
 
 // --- TIPOS ---
 export type ReactionType = 'like' | 'dislike';

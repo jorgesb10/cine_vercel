@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MovieProvider } from './context/movie/MovieContext';
 import { useMovies } from './hooks/useMovies';
-import { SwipeCard, Movie } from './components/swipe/SwipeCard';
+import { SwipeCard, type Movie } from './components/swipe/SwipeCard';
 
 // Componente temporal tipo "Discover" para probar el entorno
 const DiscoverView = () => {

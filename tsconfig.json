@@ -17,6 +17,13 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": ["src/**/__tests__/*", "**/*.test.ts", "**/*.test.tsx"],
+  "exclude": [
+    "src/**/__tests__/*",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "vitest.config.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
