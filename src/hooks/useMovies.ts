@@ -1,11 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { TMDBDiscoverResponse, isTMDBDiscoverResponse } from '../types/tmdb.types';
 
-// Re-exportamos Movie desde el tipo canónico para no romper imports existentes
-// que apunten a '../hooks/useMovies'. Migración gradual sin Big Bang.
-export type { Movie } from '../types/tmdb.types';
-
 import type { Movie } from '../types/tmdb.types';
+export type { Movie };
 import { useTMDBCache } from './useTMDBCache';
 import { useMoviePagination } from './useMoviePagination';
 
