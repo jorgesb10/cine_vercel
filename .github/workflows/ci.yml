@@ -1,0 +1,119 @@
+name: CI Pipeline
+
+# El workflow se dispara en push a la rama main o en Pull Requests dirigidas a main.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # ---------------------------------------------------------
+  # JOB 1: LINT
+  # Propósito: Verificar que el código cumpla con las reglas de estilo (ESLint).
+  # ---------------------------------------------------------
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js versión 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Se usa actions/cache para guardar ~/.npm, lo cual acelera enormemente 'npm ci'
+      # en ejecuciones posteriores al evitar descargar paquetes de internet.
+      - name: Cachear dependencias
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar ESLint
+        run: npm run lint # Asegúrate de que este script exista en package.json
+
+  # ---------------------------------------------------------
+  # JOB 2: TEST
+  # Propósito: Ejecutar las pruebas unitarias con Vitest.
+  # Dependencia: Solo corre si el job de 'lint' fue exitoso.
+  # ---------------------------------------------------------
+  test:
+    name: Run Unit Tests
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js versión 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cachear dependencias
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      # Se inyecta la variable de entorno con un valor simulado (placeholder)
+      # para evitar exponer o depender de la API key real durante los tests.
+      - name: Ejecutar Vitest
+        run: npm run test # Asegúrate de que este script exista en package.json
+        env:
+          VITE_TMDB_KEY: test_key_placeholder
+
+  # ---------------------------------------------------------
+  # JOB 3: BUILD
+  # Propósito: Generar el bundle de producción con Vite.
+  # Dependencia: Solo corre si el job de 'test' fue exitoso.
+  # ---------------------------------------------------------
+  build:
+    name: Build Project
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js versión 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Cachear dependencias
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar aplicación (Vite Build)
+        run: npm run build
+
+      # Se guarda la carpeta dist/ como un artifact para que pueda ser
+      # descargada o utilizada posteriormente por un job de despliegue.
+      - name: Subir artefacto (Directorio dist)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-build
+          path: dist/

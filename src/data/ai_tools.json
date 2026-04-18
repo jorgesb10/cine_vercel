@@ -1,0 +1,110 @@
+[
+  {
+    "nombre": "AutoGPT",
+    "descripcion_corta": "Un agente de IA autónomo de código abierto que encadena pensamientos de LLM para lograr metas complejas.",
+    "categoria": "Agentes de IA",
+    "sitio_web": "https://agpt.co/",
+    "precio": "Gratis (costos de API aparte)",
+    "modelo_precios": "Open Source",
+    "tags": ["agentes", "autónomo", "open source", "experimental"]
+  },
+  {
+    "nombre": "Devin",
+    "descripcion_corta": "El primer ingeniero de software de IA completamente autónomo capaz de planear y ejecutar proyectos enteros.",
+    "categoria": "Agentes de IA",
+    "sitio_web": "https://cognition.ai/",
+    "precio": "No público / Por acceso",
+    "modelo_precios": "Beta Privada",
+    "tags": ["agentes", "desarrollo", "ingeniero de IA", "software"]
+  },
+  {
+    "nombre": "ChatGPT",
+    "descripcion_corta": "Plataforma conversacional líder impulsada por la familia de modelos GPT de OpenAI.",
+    "categoria": "Plataformas de LLM",
+    "sitio_web": "https://chatgpt.com/",
+    "precio": "$20/mes (Plus)",
+    "modelo_precios": "Freemium",
+    "tags": ["chat", "gpt", "openai", "asistente general"]
+  },
+  {
+    "nombre": "Claude",
+    "descripcion_corta": "Asistente de IA desarrollado por Anthropic, conocido por su alta capacidad de contexto (200k tokens) y seguridad.",
+    "categoria": "Plataformas de LLM",
+    "sitio_web": "https://claude.ai/",
+    "precio": "$20/mes (Pro)",
+    "modelo_precios": "Freemium",
+    "tags": ["chat", "anthropic", "seguridad", "análisis de documentos"]
+  },
+  {
+    "nombre": "ElevenLabs",
+    "descripcion_corta": "Generador de voz con IA avanzado que ofrece capacidades de clonación y síntesis de texto a voz ultrarrealista.",
+    "categoria": "Audio con IA",
+    "sitio_web": "https://elevenlabs.io/",
+    "precio": "Desde $5/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["texto a voz", "clonación de voz", "audio realista", "locución"]
+  },
+  {
+    "nombre": "Suno AI",
+    "descripcion_corta": "Plataforma de IA que genera canciones completas (voces de calidad de estudio e instrumentos) a partir de descripciones de texto.",
+    "categoria": "Audio con IA",
+    "sitio_web": "https://suno.com/",
+    "precio": "Desde $8/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["música", "generación de canciones", "creatividad"]
+  },
+  {
+    "nombre": "Runway",
+    "descripcion_corta": "Suite de herramientas creativas aplicadas con IA, muy famosa por su modelo Gen-2 de texto y de imagen a video.",
+    "categoria": "Video con IA",
+    "sitio_web": "https://runwayml.com/",
+    "precio": "Desde $15/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["video", "edición", "texto a video", "efectos visuales"]
+  },
+  {
+    "nombre": "HeyGen",
+    "descripcion_corta": "Plataforma de generación de videos que te permite crear contenido con avatares de IA realistas hablando a partir de un guion de texto.",
+    "categoria": "Video con IA",
+    "sitio_web": "https://heygen.com/",
+    "precio": "Desde $29/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["avatares", "presentaciones", "marketing", "voceros"]
+  },
+  {
+    "nombre": "Cursor",
+    "descripcion_corta": "Un editor de código o IDE (fork de VS Code) construido desde cero con IA integrada para autocompletado y chat multi-archivo.",
+    "categoria": "Herramientas para desarrolladores con IA",
+    "sitio_web": "https://cursor.com/",
+    "precio": "$20/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["ide", "código", "productividad", "editor"]
+  },
+  {
+    "nombre": "v0 by Vercel",
+    "descripcion_corta": "Herramienta que genera interfaces de usuario funcionales (HTML, Tailwind, React) directamente a partir de descripciones de texto.",
+    "categoria": "Herramientas para desarrolladores con IA",
+    "sitio_web": "https://v0.dev/",
+    "precio": "Desde $20/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["frontend", "ui/ux", "react", "generación de código"]
+  },
+  {
+    "nombre": "Zapier Central",
+    "descripcion_corta": "Espacio de trabajo impulsado por IA para automatizar flujos usando bots de lenguaje natural a través de las miles de integraciones de Zapier.",
+    "categoria": "Automatización",
+    "sitio_web": "https://zapier.com/central/",
+    "precio": "Incluido en planes Zapier (Desde $19.99/mes)",
+    "modelo_precios": "Freemium",
+    "tags": ["workflows", "integraciones", "no-code", "bots"]
+  },
+  {
+    "nombre": "Make",
+    "descripcion_corta": "Plataforma visual para crear y automatizar flujos de trabajo complejos, que incluye módulos nativos para conectar herramientas de IA como GPT-4.",
+    "categoria": "Automatización",
+    "sitio_web": "https://make.com/",
+    "precio": "Desde $9/mes",
+    "modelo_precios": "Freemium",
+    "tags": ["workflows", "visual", "no-code", "procesos"]
+  }
+]

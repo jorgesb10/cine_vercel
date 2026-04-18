@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- === BUENAS PRÁCTICAS SEO === -->
+    <title>CineSwipe - Descubre Películas al Instante</title>
+    <meta name="description" content="Encuentra tu próxima película favorita con CineSwipe. Navega por nuestro extenso catálogo de cine, desliza hacia la derecha para guardar las que te gusten en tu lista." />
+    <meta name="keywords" content="películas, cine, TMDB, descubrimiento, swipe, recomendaciones de películas, cartelera" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="CineSwipe Team" />
+    
+    <!-- Redes Sociales / Open Graph (Para cuando compartan el link en WhatsApp/Twitter) -->
+    <meta property="og:title" content="CineSwipe - El descubridor de películas" />
+    <meta property="og:description" content="Gira, desliza y encuentra tu próxima maratón de fin de semana con CineSwipe." />
+    <meta property="og:image" content="https://image.tmdb.org/t/p/w500/tnAuB8q5vv7Tie8z4RTAIlGvCZX.jpg" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Link canónico para evitar penalización de URLs duplicadas por Google -->
+    <link rel="canonical" href="https://cineswipe.app" />
+    
+    <!-- FIX: Data Prefetch temprano. La magia de Vite reemplazará automáticamente %VITE_TMDB_KEY%
+         Al no utilizar 'await' en root, no estorbamos al navegador y disparamos esto ~800ms antes que React. -->
+    <script>
+      window.__TMDB_PREFETCH_PAYLOAD__ = fetch("https://api.themoviedb.org/3/discover/movie?api_key=%VITE_TMDB_KEY%&language=es-ES&sort_by=popularity.desc&page=1&include_adult=false&include_video=false")
+        .then(res => res.ok ? res.json() : null)
+        .catch(err => null);
+    </script>
+  </head>
+  <body class="bg-gray-950 text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
