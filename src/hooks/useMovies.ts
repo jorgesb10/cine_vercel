@@ -124,7 +124,7 @@ export const useMovies = (options: UseMoviesOptions = {}): UseMoviesResult => {
               case 401: throw new Error('API Key TMDB es inválida o carece de permisos.');
               case 404: throw new Error('Endpoint no hallado (404), revisa la sintaxis TMDB.');
               case 429: throw new Error('Cota superada (Rate limit 429): demasiadas descargas en progreso.');
-              default:  throw new Error(`TMDB se colapsó. Estado devuelto: ${response.status}`);
+              default: throw new Error(`TMDB se colapsó. Estado devuelto: ${response.status}`);
             }
           }
 

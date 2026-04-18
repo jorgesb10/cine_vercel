@@ -1,13 +1,6 @@
 import React, { useState, useRef, useEffect, memo } from 'react';
 
-// --- TIPOS EXPLICITOS ---
-export interface Movie {
-  id: number;
-  title: string;
-  year: number;
-  posterUrl: string;
-  rating: number;
-}
+import type { Movie } from '../../types/tmdb.types';
 
 export type SwipeDirection = 'like' | 'dislike';
 
